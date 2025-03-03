@@ -1,0 +1,14 @@
+{
+  "name": "oauth-security-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time OAuth security monitoring dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.11.0",
+    "node-fetch": "^2.6.7"
+  }
+}
